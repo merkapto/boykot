@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ie11!&&mfu(tm^4i&%5#2!%%99m5+7sd4ztc6(3v*3g%$zm42x'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["muhammedyilmaz.com.tr", "www.muhammedyilmaz.com.tr",]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -122,7 +122,7 @@ STATIC_URL = 'static/'
 #    BASE_DIR / "static",
     # "/var/www/static/",
 #]
-STATIC_ROOT = "/home/pi/boykot.org/static"
+STATIC_ROOT = "/var/www/static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
