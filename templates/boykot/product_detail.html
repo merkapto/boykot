@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- <div class="col"> -->
+        <div class="row">
+            <div class="col-md-6">
+                <h1>{{ object }}</h1>
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Ürün Adı :</th>
+                        <td>{{ object }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Açıklama :</th>
+                        <td>{{ object.description }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Yüzde :</th>
+                        <td>%{{ object.percentage }}</td>
+                      </tr>
+                      {% if object.company %}
+                      <tr>
+                        <th scope="row">Şirket :</th>
+                        <td><a href="{% url 'boykot:company-detail' object.company.name %}">{{ object.company }}</a></td>
+                      </tr>
+                      {% endif %}
+                      <tr>
+                        <th scope="row">Kategori :</th>
+                        <td>{{ object.category }}</td>
+                      </tr><tr>
+                        <th scope="row">Uygun :</th>
+                        <td style="background-color: {{ object.color }}; width:80%">&nbsp</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col-md-6">
+                {% if object.alternative %}
+                    <p><strong>MUADİL ÜRÜNLER :</strong></p>
+                    <hr>
+                    <table class="table">
+                        <tbody>
+                            {% for obj in object.alternative.all %}
+                                <tr>
+                                    <th scope="row">
+                                        <a href="{% url 'boykot:product-detail' obj.name %}">{{ obj }}</a>
+                                    </th>
+                                    <td style="background-color: {{ obj.color }}; width:10%">&nbsp</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            </div>
+        </div>
+
+        
+        
+    <!-- </div> -->
+
+{% endblock %}

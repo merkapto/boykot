@@ -1,0 +1,58 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="{% static 'js/color-modes.js' %}"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Muhammed Yılmaz">
+    <meta name="generator" content="0.1">
+    <title>Boycott Israel - from now to doomsday</title>    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.5.2/dist/style.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    
+  </head>
+  
+  <body>
+
+    {% include 'header.html' %}
+
+    <main>
+
+        {% include 'carousel.html' %}
+
+
+
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+
+          <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
+            {% block content %}
+                
+            {% endblock %}
+            
+          <!-- </div> -->
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-body-secondary py-1">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Yukarı</a>
+        </p>
+        <p class="mb-1">BOYKOT &copy; Tüm vicdan sahiplerinin gönlüne merhametin, insanlığın hala ölmediğini ve zalimlere karşı nasıl durulabileceğini göstermek isteyen sivil toplum birlikteliğidir!</p>
+        <p class="mb-0">Zalim kimdir bilir misin? <a href="/">Bizi takip edin</a> ve lütfen tanıtım yazımızı <a href="/">okuyun</a>.</p>
+      </div>
+    </footer>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+  </body>
+</html>
